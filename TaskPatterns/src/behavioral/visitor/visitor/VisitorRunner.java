@@ -1,0 +1,11 @@
+package behavioral.visitor.visitor;
+
+import behavioral.visitor.element.Computer;
+
+public interface VisitorRunner {
+	public static void main(String[] args) {
+		Computer computer = new Computer();
+		IComputerVisitor displayVisitor = new ComputerDisplayVisitor();
+		computer.accept(displayVisitor);
+	}
+}
