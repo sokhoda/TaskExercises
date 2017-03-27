@@ -1,5 +1,6 @@
 package deadlock;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
