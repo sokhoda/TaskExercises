@@ -5,6 +5,8 @@ import org.apache.log4j.Logger;
 
 import task1.Airplane.AirplaneEngine;
 
+import java.util.Comparator;
+
 public class Task1Runner {
 	private static final Logger log = LogManager.getLogger(Task1Runner.class
 			.getName());
@@ -43,9 +45,16 @@ public class Task1Runner {
 		plane.getEngine2().accessToOuterClassStaticMethod();
 		System.out.println("\n plane = " + plane.getPlaneName() + " "
 				+ Airplane.getEngineStatic());
-		AirplaneEngine eng = new Airplane().new AirplaneEngine();
+		Airplane.AirplaneEngine eng = new Airplane().new AirplaneEngine();
 
 		System.gc();
 		Runtime.getRuntime().gc();
+		new Comparator<Airplane>() {
+			@Override
+			public int compare(Airplane o1, Airplane o2) {
+				return 0;
+			}
+		};
+		Comparator<Airplane> c = (Airplane o1, Airplane o2) -> o1.getMaxVelocity() - o2.getMaxVelocity();
 	}
 }
