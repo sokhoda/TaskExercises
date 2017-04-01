@@ -45,7 +45,7 @@ public class Task1Runner {
 		plane.getEngine2().accessToOuterClassStaticMethod();
 		System.out.println("\n plane = " + plane.getPlaneName() + " "
 				+ Airplane.getEngineStatic());
-		Airplane.AirplaneEngine eng = new Airplane().new AirplaneEngine();
+		AirplaneEngine eng = new Airplane().new AirplaneEngine();
 
 		System.gc();
 		Runtime.getRuntime().gc();

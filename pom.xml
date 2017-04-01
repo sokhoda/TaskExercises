@@ -4,13 +4,37 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>TaskExercises</groupId>
+    <groupId>ua.kho</groupId>
     <artifactId>TaskExercises</artifactId>
     <version>1.0-SNAPSHOT</version>
-<properties>
-    <lombok.version>1.16.10.0</lombok.version>
-    <log4j.version>1.2.17</log4j.version>
-</properties>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>TaskString</module>
+        <module>TaskThread</module>
+        <module>TaskPatterns</module>
+        <module>TaskInner</module>
+        <module>TaskCollection</module>
+    </modules>
+
+    <properties>
+        <lombok.version>1.16.10</lombok.version>
+        <log4j.version>1.2.17</log4j.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
@@ -19,11 +43,16 @@
             <version>4.12</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
 
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
     </dependencies>
-<modules>
-    <module>TaskString
-
-    </module>
-</modules>
 </project>
