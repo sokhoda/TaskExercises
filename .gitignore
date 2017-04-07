@@ -1,7 +1,12 @@
-.idea/*
 target/*
 classes/*
 */target/*
 *.iml
-*.class
 ~$*
+.idea/
+TaskCollection/target/
+TaskInner/target/
+TaskPatterns/target/
+TaskString/target/
+TaskThread/target/
+
