@@ -9,7 +9,13 @@ public class EnumSetDemo {
 		ONE, TWO, THREE, FOUR, FIVE
 	};
 
+	public static String myMethod(String par){
+		System.out.println(par);
+		return par;
+	}
+
 	public static void main(String[] args) {
+		myMethod("hallo");
 
 		// create a set
 		EnumSet<Numbers> set;
