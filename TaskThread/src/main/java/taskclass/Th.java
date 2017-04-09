@@ -12,6 +12,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 public class Th {
+	public static final int LIST_SIZE = 100;
 
 	private static void fillList(List<Integer> list, int k) {
 		for (int i = 0; i < k; i++) {
@@ -21,15 +22,15 @@ public class Th {
 
 	public static void main(String[] args)
 			throws InterruptedException, ExecutionException {
-		List<Integer> list1 = Collections
+		List<Integer> arrList = Collections
 				.synchronizedList(new ArrayList<Integer>());
-		List<Integer> list2 = new CopyOnWriteArrayList<>();
-		fillList(list1, 100);
-		fillList(list2, 100);
+		List<Integer> copyOnWriteList = new CopyOnWriteArrayList<>();
+		fillList(arrList, LIST_SIZE);
+		fillList(copyOnWriteList, LIST_SIZE);
 		System.out.println("List synchronized:");
-		checkList(list1);
+		checkList(arrList);
 		System.out.println("CopyOnWriteArrayList:");
-		checkList(list2);
+		checkList(copyOnWriteList);
 
 	}
 
@@ -39,8 +40,8 @@ public class Th {
 		ExecutorService ex = Executors.newFixedThreadPool(2);
 		// latch.
 
-		Future<Long> f1 = ex.submit(new GetThread(0, 50, list, latch));
-		Future<Long> f2 = ex.submit(new GetThread(50, 100, list, latch));
+		Future<Long> f1 = ex.submit(new GetThread(0, LIST_SIZE/2, list, latch));
+		Future<Long> f2 = ex.submit(new GetThread(LIST_SIZE/2, LIST_SIZE, list, latch));
 		latch.countDown();
 		System.out.println("Thread 1: " + f1.get() / 1000);
 		System.out.println("Thread 2: " + f2.get() / 1000);
