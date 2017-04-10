@@ -15,6 +15,7 @@
         <module>TaskPatterns</module>
         <module>TaskInner</module>
         <module>TaskCollection</module>
+        <module>jsontree</module>
     </modules>
 
     <properties>
