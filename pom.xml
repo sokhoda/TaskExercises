@@ -16,6 +16,7 @@
         <module>TaskInner</module>
         <module>TaskCollection</module>
         <module>jsontree</module>
+        <module>TaskLombok</module>
     </modules>
 
     <properties>
