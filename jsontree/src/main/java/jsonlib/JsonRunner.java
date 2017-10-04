@@ -4,6 +4,7 @@ import domain.Student;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.SerializationConfig;
+import org.codehaus.jackson.node.NullNode;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -45,8 +46,13 @@ public class JsonRunner {
 
         JsonNode root = mapper.valueToTree(student);
 
-        Student getNode = mapper.treeToValue(root, Student.class);
-        System.out.println("getNode = " + getNode);
+        Student studentFromJsonNode = mapper.treeToValue(root, Student.class);
+        System.out.println("studentFromJsonNode = " + studentFromJsonNode);
+
+        System.out.println("JsonNode isNull: " + NullNode.getInstance().isNull());
+        System.out.println("JsonNode isNull valueToTree: " + mapper.valueToTree(null).isNull());
+
+
 
     }
 }
