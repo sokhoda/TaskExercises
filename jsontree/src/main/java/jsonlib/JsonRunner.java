@@ -50,8 +50,9 @@ public class JsonRunner {
         System.out.println("studentFromJsonNode = " + studentFromJsonNode);
 
         System.out.println("JsonNode isNull: " + NullNode.getInstance().isNull());
-        System.out.println("JsonNode isNull valueToTree: " + mapper.valueToTree(null).isNull());
+//        System.out.println("JsonNode isNull valueToTree: " + mapper.valueToTree(null).isNull());
 
+        System.out.println("JsonNode treeToValue: " + mapper.treeToValue(NullNode.getInstance(), Student.class));
 
 
     }
