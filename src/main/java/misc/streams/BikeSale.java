@@ -21,4 +21,6 @@ public class BikeSale implements Comparable {
                 ", internalNo=" + internalNo +
                 '}';
     }
+
+
 }

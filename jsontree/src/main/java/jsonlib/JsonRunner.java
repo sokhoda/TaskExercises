@@ -1,6 +1,7 @@
 package jsonlib;
 
 import domain.Student;
+import org.apache.commons.lang3.StringUtils;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.SerializationConfig;
@@ -10,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.StringTokenizer;
 
 
 public class JsonRunner {
@@ -48,8 +50,16 @@ public class JsonRunner {
 
         Student studentFromJsonNode = mapper.treeToValue(root, Student.class);
         System.out.println("studentFromJsonNode = " + studentFromJsonNode);
+        System.out.println("replaced:" + "fef233eDD.f44".replaceAll("[a-z, A-Z]+",""));
 
-        System.out.println("JsonNode isNull: " + NullNode.getInstance().isNull());
+        StringTokenizer stringTokenizer = new StringTokenizer("0.144rf3.57fer,f43tr4", ".,");
+        String transformedCiValue = stringTokenizer.nextToken();
+        String ciValueWithDigitsOnly = transformedCiValue.replaceAll("\\D+", StringUtils.EMPTY);
+        System.out.println("stringBefore: " + ciValueWithDigitsOnly );
+        System.out.println("Compare:" + "90".compareTo("1.45"));
+
+        NullNode nullInstance = NullNode.getInstance();
+        System.out.println("JsonNode isNull: " + nullInstance.isNull());
 //        System.out.println("JsonNode isNull valueToTree: " + mapper.valueToTree(null).isNull());
 
         System.out.println("JsonNode treeToValue: " + mapper.treeToValue(NullNode.getInstance(), Student.class));

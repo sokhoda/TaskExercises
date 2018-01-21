@@ -1,15 +1,18 @@
 package domain;
 
-import lombok.*;
-import org.codehaus.jackson.annotate.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorOrder;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import java.io.Serializable;
 
 @Builder
 @Getter
@@ -22,18 +25,21 @@ import java.io.Serializable;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(
         name = "Student",
-        propOrder = {"name", "age", "verified", "marks"}
+        propOrder = {"address", "name", "age", "verified", "marks"}
 )
-public class Student {
+public class StudentExtended {
     @XmlElement(required = true)
-    public String name;
+    private String name;
 
     @XmlElement(required = true)
-    public int age;
+    private int age;
 
     @XmlElement(required = true)
-    public boolean verified;
+    private Address address;
+
+    @XmlElement(required = true)
+    private boolean verified;
 
     @XmlElement(required = false)
-    public int[] marks;
+    private int[] marks;
 }
