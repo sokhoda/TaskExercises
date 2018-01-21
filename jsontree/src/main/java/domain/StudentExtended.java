@@ -34,12 +34,12 @@ public class StudentExtended {
     @XmlElement(required = true)
     private int age;
 
-    @XmlElement(required = true)
+    @XmlElement(nillable = true)
     private Address address;
 
     @XmlElement(required = true)
     private boolean verified;
 
-    @XmlElement(required = false)
+    @XmlElement(nillable = true)
     private int[] marks;
 }
