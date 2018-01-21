@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(
-        name = "Student",
+        name = "Student1",
         propOrder = {"address", "name", "age", "verified", "marks"}
 )
 public class StudentExtended {
