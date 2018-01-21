@@ -26,23 +26,9 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(
         name = "Student1",
-        propOrder = {"address", "name", "age", "verified", "marks"}
+        propOrder = {"versao"}
 )
-public class StudentExtended {
-    @XmlElement(required = true)
-    private String name;
-
-    @XmlElement(required = true)
-    private int age;
-
-    @XmlElement(nillable = true)
-    private Address address;
-
-    @XmlElement(required = true)
-    private boolean verified;
-
-    @XmlElement(nillable = true)
-    private int[] marks;
+public class StudentExtendedAttribute {
 
     @XmlAttribute(name = "versao", required = true)
     private String versao;
