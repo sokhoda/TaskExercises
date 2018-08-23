@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<student>
+    <verified>true</verified>
+    <age>29</age>
+    <name>mkyong</name>
+    <address>
+        <city>HongKong</city>
+        <street>T. Shevchenka</street>
+    </address>
+</student>
