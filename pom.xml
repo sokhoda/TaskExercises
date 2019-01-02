@@ -17,6 +17,7 @@
         <module>TaskCollection</module>
         <module>jsontree</module>
         <module>TaskLombok</module>
+        <module>cliRun</module>
     </modules>
 
     <properties>
