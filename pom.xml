@@ -18,6 +18,7 @@
         <module>jsontree</module>
         <module>TaskLombok</module>
         <module>cliRun</module>
+        <module>searchStringInFiles</module>
     </modules>
 
     <properties>
