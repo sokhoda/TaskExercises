@@ -6,26 +6,25 @@ import java.io.InputStream;
 import java.util.Properties;
 import java.util.stream.Stream;
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class SimpleReadArgs {
-    private static final Logger LOG = LoggerFactory.getLogger(SimpleReadArgs.class);
+//    private static final Logger LOG = LoggerFactory.getLogger(SimpleReadArgs.class);
 
     private static final String ADT_PROPERTIES_KEY = "adt.properties";
-    private static final String ADT_PROPERTIES_DEFAULT_FILENAME = "\\adt.properties";
+    private static final String ADT_PROPERTIES_DEFAULT_FILENAME = "adt.properties";
 
     public static void main(String[] args) {
-        String property1 = System.getProperty("path.separator");
-        String property3 = System.getProperty("java.home");
+        String pathSeparator = System.getProperty("path.separator");
+        String javaHome = System.getProperty("java.home");
 
         for (String arg : args) {
             System.out.println(StringUtils.upperCase(arg));
         }
-        String[] split = System.getProperty("java.class.path").split(property1);
+        String[] javaClassPaths = System.getProperty("java.class.path").split(pathSeparator);
         System.out.println("java.class.path:");
-                Stream.of(split).forEach(System.out::println);
-        System.out.println("path.separator: " + property1 + "\n" + property3 + "\n");
+                Stream.of(javaClassPaths).forEach(System.out::println);
+        System.out.println("path.separator: " + pathSeparator);
+        System.out.println("java.home: " + javaHome);
         System.out.println(ADT_PROPERTIES_KEY + ":" + System.getProperty(ADT_PROPERTIES_KEY));
         setUp();
     }
@@ -39,7 +38,8 @@ public class SimpleReadArgs {
 //            try (PrintWriter writer = new PrintWriter(new File("properties.txt"))) {
 //                writer.println("Connect to adt.host = " + adtHost + ", adt.port = " + adtPort);
 //            }
-            LOG.info("Connect to adt.host = " + adtHost + ", adt.port = " + adtPort);
+//            LOG.info("Connect to adt.host = " + adtHost + ", adt.port = " + adtPort);
+            System.out.println("Connect to adt.host = " + adtHost + ", adt.port = " + adtPort);
         } catch (IOException e) {
             throw new RuntimeException("Loading ADT properties failure", e);
         }
