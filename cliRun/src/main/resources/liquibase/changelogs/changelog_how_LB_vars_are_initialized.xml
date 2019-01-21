@@ -1,0 +1,17 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd"
+                   logicalFilePath="changelog_how_LB_vars_are_initialized.xml">
+
+    <property name="sprint_40-14_definition_path" value="sprint_40-14/ci/definition" context="ci"/>
+
+    <changeSet id="CI_test" author="someAuthor" context="ci">
+        <comment>test CI</comment>
+
+        <customChange class="MyCustomChange">
+            <!--<param name="relativePath" value="${sprint_40-14_definition_path}/CIF0325_GUI_SHIPMENT_TYPE.FORM_FIELD.v002"/>-->
+            <param name="testValue" value="${somePropertyVar}"/>
+
+        </customChange>
+    </changeSet>
+
+</databaseChangeLog>
