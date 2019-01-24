@@ -4,7 +4,7 @@
 
     <property name="sprint_40-14_definition_path" value="sprint_40-14/ci/definition" context="ci"/>
 
-    <changeSet id="CI_test" author="someAuthor" context="ci">
+    <changeSet id="CI_test1" author="someAuthor" context="ci">
         <comment>test CI</comment>
 
         <customChange class="MyCustomChange">
