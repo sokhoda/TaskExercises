@@ -1,5 +1,7 @@
 package edoing;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -66,6 +68,14 @@ public class Runner {
 		System.out.println(sb.length());
 		System.out.println("mat.find: " + mat.find(16));
 		System.out.println(pat.pattern());
+
+		try {
+			System.out.println(String.format("host = %s, ip = %s", InetAddress.getLocalHost().getHostName(), InetAddress.getLocalHost().getHostAddress()));
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+
+		System.out.println(Boolean.TRUE);
 
 	}
 }
